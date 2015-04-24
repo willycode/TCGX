@@ -1,0 +1,5 @@
+﻿# -- messages used in decorators/default.jsp --
+webapp.title=资讯
+System.Bulletin=中台系统公告
+Todolist=使用者待办清单
+Calendar=单位行事历

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/TCGX/!svn/ver/204/SRC/src/com/kangdainfo/common/model/bo
+END
+CommonCatalog.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/TCGX/!svn/ver/198/SRC/src/com/kangdainfo/common/model/bo/CommonCatalog.java
+END
+CommonVersion.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/TCGX/!svn/ver/16/SRC/src/com/kangdainfo/common/model/bo/CommonVersion.java
+END
+CommonConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/common/model/bo/CommonConfig.java
+END
+CommonUserRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/TCGX/!svn/ver/16/SRC/src/com/kangdainfo/common/model/bo/CommonUserRole.java
+END
+CommonCodeKind.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/194/SRC/src/com/kangdainfo/common/model/bo/CommonCodeKind.java
+END
+BaseReferenceDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/TCGX/!svn/ver/175/SRC/src/com/kangdainfo/common/model/bo/BaseReferenceDef.java
+END
+CommonUserGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/common/model/bo/CommonUserGroup.java
+END
+CommonLunarCalendar.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/TCGX/!svn/ver/150/SRC/src/com/kangdainfo/common/model/bo/CommonLunarCalendar.java
+END
+CommonNewsLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/TCGX/!svn/ver/16/SRC/src/com/kangdainfo/common/model/bo/CommonNewsLog.java
+END
+CommonYearList.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/142/SRC/src/com/kangdainfo/common/model/bo/CommonYearList.java
+END
+CommonUserGroupTransLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/TCGX/!svn/ver/163/SRC/src/com/kangdainfo/common/model/bo/CommonUserGroupTransLog.java
+END
+CommonAuditLogHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/TCGX/!svn/ver/117/SRC/src/com/kangdainfo/common/model/bo/CommonAuditLogHistory.java
+END
+BaseCountryDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/178/SRC/src/com/kangdainfo/common/model/bo/BaseCountryDef.java
+END
+CommonUnlimitIp.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/TCGX/!svn/ver/179/SRC/src/com/kangdainfo/common/model/bo/CommonUnlimitIp.java
+END
+CommonNews.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/TCGX/!svn/ver/104/SRC/src/com/kangdainfo/common/model/bo/CommonNews.java
+END
+CommonDepartment.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/TCGX/!svn/ver/139/SRC/src/com/kangdainfo/common/model/bo/CommonDepartment.java
+END
+CommonVisitLogFunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/TCGX/!svn/ver/163/SRC/src/com/kangdainfo/common/model/bo/CommonVisitLogFunction.java
+END
+CommonVisitLogWeek.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/TCGX/!svn/ver/16/SRC/src/com/kangdainfo/common/model/bo/CommonVisitLogWeek.java
+END
+CommonCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/common/model/bo/CommonCode.java
+END
+BaseModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/TCGX/!svn/ver/132/SRC/src/com/kangdainfo/common/model/bo/BaseModel.java
+END
+CommonUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/TCGX/!svn/ver/204/SRC/src/com/kangdainfo/common/model/bo/CommonUser.java
+END
+CommonZip.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/common/model/bo/CommonZip.java
+END
+CommonMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/TCGX/!svn/ver/104/SRC/src/com/kangdainfo/common/model/bo/CommonMsg.java
+END
+CommonVisitLogDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/TCGX/!svn/ver/47/SRC/src/com/kangdainfo/common/model/bo/CommonVisitLogDetail.java
+END
+CommonAuditLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/common/model/bo/CommonAuditLog.java
+END
+CommonGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/common/model/bo/CommonGroup.java
+END
+CommonDtreeLocName.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/TCGX/!svn/ver/92/SRC/src/com/kangdainfo/common/model/bo/CommonDtreeLocName.java
+END
+BaseCenterZone.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/172/SRC/src/com/kangdainfo/common/model/bo/BaseCenterZone.java
+END

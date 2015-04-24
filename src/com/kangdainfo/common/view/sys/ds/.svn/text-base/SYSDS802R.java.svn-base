@@ -1,0 +1,194 @@
+package com.kangdainfo.common.view.sys.ds;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.kangdainfo.ServiceGetter;
+import com.kangdainfo.common.model.bo.CommonVisitLogFunction;
+import com.kangdainfo.common.util.Common;
+import com.kangdainfo.common.util.Datetime;
+import com.kangdainfo.common.util.SuperBean;
+import com.kangdainfo.common.util.View;
+
+public class SYSDS802R extends SuperBean {
+	private String id;
+	
+	private String q_begTriggerDate;
+	private String q_endTriggerDate;
+	private String q_begTriggerTime;
+	private String q_endTriggerTime;
+	private String q_unitId;
+	private String q_userId;
+	private String q_dtreeId;
+	
+	@Override
+	public ArrayList doQueryAll() throws Exception {
+		java.util.ArrayList<String[]> arrList = new java.util.ArrayList<String[]>();
+		Map<String, Object> maps = new HashMap<String, Object>();
+		
+		StringBuffer hql = new StringBuffer();
+		hql.append("from CommonVisitLogFunction where 1=1");
+		
+		if(!"".equals(getQ_begTriggerDate())){
+			//有輸入時間起
+			if(!"".equals(getQ_begTriggerTime())){
+				hql.append(" and triggerDate+triggerTime >= :a");
+				maps.put("a", getQ_begTriggerDate() + getQ_begTriggerTime());
+			}
+			else{
+				hql.append(" and triggerDate >= :a");
+				maps.put("a", getQ_begTriggerDate());
+			}
+		}
+		
+		if(!"".equals(getQ_endTriggerDate())){
+			//有輸入時間迄
+			if(!"".equals(getQ_endTriggerTime())){
+				hql.append(" and triggerDate+triggerTime <= :b");
+				maps.put("b", getQ_endTriggerDate() + getQ_endTriggerTime());
+			}
+			else{
+				hql.append(" and triggerDate <= :b");
+				maps.put("b", getQ_endTriggerDate());
+			}
+		}
+		
+		if(!"".equals(getQ_unitId())){
+			hql.append(" and unitId = :unitId");
+			maps.put("unitId", getQ_unitId());
+		}
+		
+		if(!"".equals(getQ_userId())){
+			hql.append(" and userId = :userId");
+			maps.put("userId", getQ_userId());
+		}
+		
+		if(!"".equals(getQ_dtreeId())){
+			hql.append(" and dtreeId = :dtreeId");
+			maps.put("dtreeId", getQ_dtreeId());
+		}		
+		System.out.println("SYSDS802R查詢條件 == " + hql.toString());
+
+		this.processCurrentPageAttribute(ServiceGetter.getInstance().getCommonService().loadCount(hql.toString(), maps));
+		if(getTotalRecord() > 0){
+			if(getState().indexOf("query") < 0){
+				ServiceGetter.getInstance().getCommonService().clear();
+			}
+			
+			hql.append(" order by centerShortName,userId,dtreeId,triggerDate,triggerTime desc");
+			System.out.println("SYSDS802R查詢條件 == " + hql.toString());
+			
+			java.util.List objList = ServiceGetter.getInstance().getCommonService().load(hql.toString(), this.getRecordStart(), this.getPageSize(), maps);
+			if(objList != null && objList.size() > 0){
+				for(Object obj : objList){
+					CommonVisitLogFunction o = (CommonVisitLogFunction)obj;
+					String[] rowArray = new String[8];
+					rowArray[0] = Common.get(o.getId());
+					rowArray[1] = Common.get(o.getUnitId());
+					rowArray[2] = Common.get(o.getUnitShortName());
+					rowArray[3] = Common.get(o.getUserId());
+					rowArray[4] = Common.get(o.getUserName());
+					rowArray[5] = Common.get(o.getDtreeId());
+					rowArray[6] = Common.get(o.getDtreeName());
+					rowArray[7] = Common.get(Datetime.formatDateYYYMMDD(o.getTriggerDate()) + " " + Datetime.formatTimeHHMMSS(o.getTriggerTime()));
+					arrList.add(rowArray);
+				}
+			}
+		}
+		return arrList;		
+	}
+	
+	@Override
+	public Object doQueryOne() throws Exception {
+		return null;
+	}
+	
+	@Override
+	public void doCreate() throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void doDelete() throws Exception {
+		// TODO Auto-generated method stub
+
+	}	
+
+	@Override
+	public void doUpdate() throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	public String getId() {
+		return checkGet(id);
+	}
+
+	public void setId(String id) {
+		this.id = checkSet(id);
+	}
+
+	public String getQ_begTriggerDate() {
+		return checkGet(q_begTriggerDate);
+	}
+
+	public void setQ_begTriggerDate(String qBegTriggerDate) {
+		q_begTriggerDate = checkSet(qBegTriggerDate);
+	}
+
+	public String getQ_endTriggerDate() {
+		return checkGet(q_endTriggerDate);
+	}
+
+	public void setQ_endTriggerDate(String qEndTriggerDate) {
+		q_endTriggerDate = checkSet(qEndTriggerDate);
+	}
+
+	public String getQ_begTriggerTime() {
+		return checkGet(q_begTriggerTime);
+	}
+
+	public void setQ_begTriggerTime(String qBegTriggerTime) {
+		q_begTriggerTime = checkSet(qBegTriggerTime);
+	}
+
+	public String getQ_endTriggerTime() {
+		return checkGet(q_endTriggerTime);
+	}
+
+	public void setQ_endTriggerTime(String qEndTriggerTime) {
+		q_endTriggerTime = checkSet(qEndTriggerTime);
+	}
+
+	
+
+	public String getQ_unitId() {
+		return checkGet(q_unitId);
+	}
+
+	public void setQ_unitId(String q_unitId) {
+		this.q_unitId = checkSet(q_unitId);
+	}
+
+	public String getQ_userId() {
+		return checkGet(q_userId);
+	}
+
+	public void setQ_userId(String qUserId) {
+		q_userId = checkSet(qUserId);
+	}
+
+	public String getQ_dtreeId() {
+		return checkGet(q_dtreeId);
+	}
+
+	public void setQ_dtreeId(String qDtreeId) {
+		q_dtreeId = checkSet(qDtreeId);
+	}
+
+	
+	
+
+}

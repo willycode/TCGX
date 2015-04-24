@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--  ==== 0 55 23 ? * *
+"cronExpression"屬性的指定，指定的格式是至少六個時間元素，最多七個時間元素，例如上面的指定是每天的19時要執行Job一次，
+"cronExpression"屬性指定的格式如下：
+秒（0-59） 
+分（0-59） 
+小時（0-23） 
+每月第幾天（1-31） 
+月（1-12或JAN-DEC） 
+每星期第幾天（1-7或SUN-SAT） 
+年（1970-2099） 
+
+其中「每月第幾天」與「每星期第幾天是互斥」的，兩個只能設定一個，不設定的以 ? 符號撰寫，如果有好幾個時間點，可以使用 , 
+符號，例如：「0 0 10,12,14 * * ?」表示每天的10時、12時、14時要執行Job；對於連續的時間可以使用 - 符號，
+例如「0 0 10,12,14 1-15 * ?」表示每月的1到15日每10時、12時、15時要執行Job，時間格式中的年指定可有可無，
+例如：「0 0 10,12,14 ? * MON 2006」表示2006年每星期一的10時、12時、14時要執行Job。
+-->	
+
+<!--================== 範例：Eamil傳送訊息 ==================-->
+    <bean id="mailScheduleDao" class="com.kangdainfo.ctis.model.dao.impl.MailScheduleDaoImpl">
+    	<property name="scheduleName" value="EMAIL訊息通知排程" />
+		<property name="saveLogScheduleName" value="Y" />           	
+    </bean>    
+
+	<bean id="mailScheduleRefreshMethodJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="mailScheduleDao"/>
+		</property>
+		<property name="targetMethod">
+			<value>parseScheduleAndSaveLog</value>
+		</property>
+	</bean>	
+	
+	<bean id="mailScheduleRefreshTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="mailScheduleRefreshMethodJob"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 21 * * ?</value>
+		</property>
+	</bean>	
+
+<!--================== 帳號解除鎖定 Service ==================-->
+	<bean id="resetLockScheduleDao" class="com.kangdainfo.ctis.model.dao.impl.ResetLock1ScheduleDaoImpl">
+		<property name="scheduleName" value="帳號解除鎖定" />
+		<property name="saveLogScheduleName" value="Y" />        	    	
+	</bean>    
+	
+	<bean id="resetLockScheduleJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="resetLockScheduleDao"/>
+		</property>
+		<property name="targetMethod">
+			<value>parseScheduleAndSaveLog</value>
+		</property>
+	</bean>	
+	
+	<bean id="resetLockScheduleTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="resetLockScheduleJob"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0/10 * * * ?</value>
+		</property>
+	</bean>	
+
+
+
+    <!--================== Service ==================-->
+
+    <bean id="scheduleService" class="com.kangdainfo.common.service.impl.ScheduleServiceImpl">
+    	<property name="mailScheduleDao">
+    		<ref bean="mailScheduleDao" />
+    	</property>		
+		<property name="resetLockScheduleDao">
+			<ref bean="resetLockScheduleDao" />
+		</property>
+	</bean> 
+	
+	<!--================== scheduleRefreshScheduler ==================-->
+	<bean id="scheduleRefreshScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+<!-- 			
+				<ref bean="mailScheduleRefreshTrigger"/>
+				<ref bean="resetLockScheduleTrigger"/>
+-->				
+			</list>		
+		</property>
+	</bean>   	
+</beans>

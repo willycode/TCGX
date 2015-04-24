@@ -1,0 +1,27 @@
+K 26
+svn:wc:ra_dav:activity-url
+V 19
+/svn/TCGX/!svn/act/
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/TCGX/!svn/ver/184/SRC
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/TCGX/!svn/ver/90/SRC/build.xml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/TCGX/!svn/ver/20/SRC/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/TCGX/!svn/ver/20/SRC/.classpath
+END

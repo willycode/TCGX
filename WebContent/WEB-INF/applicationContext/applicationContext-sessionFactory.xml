@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- ==================== Hibernate Session Factory ==================== -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" lazy-init="true" >
+
+        <property name="dataSource" ref="dataSource" />
+
+        <property name="annotatedClasses">
+            <list>
+                <!-- Common Tables -->
+                <value>com.kangdainfo.common.model.bo.CommonDtree</value>
+                <value>com.kangdainfo.common.model.bo.CommonDtreeLocName</value>
+                <value>com.kangdainfo.common.model.bo.CommonDepartment</value>
+                <value>com.kangdainfo.common.model.bo.CommonUser</value>
+                <value>com.kangdainfo.common.model.bo.CommonUserRole</value>
+                <value>com.kangdainfo.common.model.bo.CommonCodeKind</value>
+                <value>com.kangdainfo.common.model.bo.CommonCode</value>
+                <value>com.kangdainfo.common.model.bo.CommonNews</value>
+                <value>com.kangdainfo.common.model.bo.CommonNewsLog</value>
+                <value>com.kangdainfo.common.model.bo.CommonAuth</value>
+                <value>com.kangdainfo.common.model.bo.CommonGroup</value>
+                <value>com.kangdainfo.common.model.bo.CommonUserGroup</value>
+                <value>com.kangdainfo.common.model.bo.CommonConfig</value>
+                <value>com.kangdainfo.common.model.bo.CommonVersion</value>
+                <value>com.kangdainfo.common.model.bo.CommonUnlimitIp</value>
+                <value>com.kangdainfo.common.model.bo.CommonYearList</value>
+                <value>com.kangdainfo.common.model.bo.CommonLunarCalendar</value>
+                <value>com.kangdainfo.common.model.bo.CommonVisitLogFunction</value>
+                <value>com.kangdainfo.common.model.bo.CommonVisitLogDetail</value>
+                <value>com.kangdainfo.common.model.bo.CommonVisitLogWeek</value>
+                <value>com.kangdainfo.common.model.bo.CommonAuditLog</value>
+                <value>com.kangdainfo.common.model.bo.CommonAuditLogHistory</value>
+                <value>com.kangdainfo.common.model.bo.CommonMsg</value>
+                <value>com.kangdainfo.common.model.bo.CommonMsgGroup</value>
+                <value>com.kangdainfo.common.model.bo.CommonMsgLog</value>
+                <value>com.kangdainfo.common.model.bo.CommonSeq</value>
+
+                <value>com.kangdainfo.common.model.bo.CommonZip</value>
+                <value>com.kangdainfo.common.model.bo.CommonVisitLogFunction</value>
+                <value>com.kangdainfo.common.model.bo.CommonUserGroupTransLog</value>
+                <value>com.kangdainfo.common.model.bo.CommonCatalog</value>
+                <value>com.kangdainfo.common.model.bo.BaseCenterZone</value>
+                <value>com.kangdainfo.common.model.bo.BaseCountryDef</value>
+                <value>com.kangdainfo.common.model.bo.BaseSkillDef</value>
+                <value>com.kangdainfo.common.model.bo.BaseReferenceDef</value>
+
+                <value>com.kangdainfo.workflow.model.bo.WorkFlow</value>
+                <value>com.kangdainfo.workflow.model.bo.FramePath</value>
+                <value>com.kangdainfo.workflow.model.bo.CaseNode</value>
+                <value>com.kangdainfo.workflow.model.bo.Handle</value>
+
+                <value>com.kangdainfo.ctis.model.bo.BaseChanCatDef</value>
+                <value>com.kangdainfo.ctis.model.bo.BaseHealthDef</value>
+                <value>com.kangdainfo.ctis.model.bo.BaseLanguageInfo</value>
+                <value>com.kangdainfo.ctis.model.bo.BaseDsaJobDef</value>
+                <value>com.kangdainfo.ctis.model.bo.CenterMemberInfo</value>
+                <value>com.kangdainfo.ctis.model.bo.CenterUsage</value>
+                <value>com.kangdainfo.ctis.model.bo.CenterDsaMemberRecord</value>
+                <value>com.kangdainfo.ctis.model.bo.CtMemberInfo</value>
+                <value>com.kangdainfo.ctis.model.bo.CtMasterInfo</value>
+                <value>com.kangdainfo.ctis.model.bo.CtFamilyList</value>
+                <value>com.kangdainfo.ctis.model.cor.ap.Corap009DB</value>
+                
+            </list>
+        </property>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.default_schema">${dataSource.schema}</prop>
+                <prop key="hibernate.max_fetch_depth">${hibernate.max_fetch_depth}</prop>
+                <prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+                <prop key="hibernate.jdbc.use_streams_for_binary">${hibernate.jdbc.use_streams_for_binary}</prop>
+                <prop key="hibernate.default_batch_fetch_size">${hibernate.default_batch_fetch_size}</prop>
+                <prop key="hibernate.bytecode.use_reflection_optimizer">${hibernate.bytecode.use_reflection_optimizer}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+
+                <!-- =========== cache =========== -->
+                <prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop>
+                <prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop>
+
+                <!-- connection pool setting -->
+                <prop key="hibernate.c3p0.max_size">${hibernate.c3p0.maxPoolSize}</prop>
+                <prop key="hibernate.c3p0.min_size">${hibernate.c3p0.minPoolSize}</prop>
+                <prop key="hibernate.c3p0.timeout">300000</prop>
+                <prop key="hibernate.c3p0.max_statements">${hibernate.c3p0.maxStatements}</prop>
+                <prop key="hibernate.c3p0.acquire_increment">${hibernate.c3p0.acquireIncrement}</prop>
+                <prop key="hibernate.c3p0.numHelperThreads">${hibernate.c3p0.numHelperThreads}</prop>
+                <prop key="hibernate.c3p0.autoCommitOnClose">${hibernate.c3p0.autoCommitOnClose}</prop>
+
+                <!--
+                <prop key="hibernate.connection.provider_class">${hibernate.connection.provider_class}</prop>
+                <prop key="hibernate.proxool.pool_alias">${hibernate.proxool.pool_alias}</prop>
+                <prop key="hibernate.proxool.existing_pool">${hibernate.proxool.existing_pool}</prop>
+
+                <prop key="hibernate.dbcp.maxActive">${hibernate.dbcp.maxActive}</prop>
+                <prop key="hibernate.dbcp.whenExhaustedAction">${hibernate.dbcp.whenExhaustedAction}</prop>
+                <prop key="hibernate.dbcp.maxWait">${hibernate.dbcp.maxWait}</prop>
+                <prop key="hibernate.dbcp.maxIdle">${hibernate.dbcp.maxIdle}</prop>
+                <prop key="hibernate.dbcp.ps.maxActive">${hibernate.dbcp.ps.maxActive}</prop>
+                <prop key="hibernate.dbcp.ps.whenExhaustedAction">${hibernate.dbcp.ps.whenExhaustedAction}</prop>
+                <prop key="hibernate.dbcp.ps.maxWait">${hibernate.dbcp.ps.maxWait}</prop>
+                <prop key="hibernate.dbcp.ps.maxIdle">${hibernate.dbcp.ps.maxIdle}</prop>
+                 -->
+            </props>
+        </property>
+    </bean>
+
+</beans>

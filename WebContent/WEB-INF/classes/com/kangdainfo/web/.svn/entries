@@ -1,0 +1,43 @@
+10
+
+dir
+183
+https://211.72.223.242/svn/TCGX/SRC/src/com/kangdainfo/web
+https://211.72.223.242/svn/TCGX
+
+
+
+2014-09-04T10:26:53.709665Z
+164
+ted.yang
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+26f6459e-d948-5b4e-8789-951ace8a59fc
+
+filter
+dir
+
+listener
+dir
+
+monitor
+dir
+
+scripting
+dir
+
+util
+dir
+

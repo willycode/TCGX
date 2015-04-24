@@ -1,0 +1,5 @@
+# -- messages used in decorators/default.jsp --
+webapp.title=informazioni
+System.Bulletin=bollettino di sistema
+Todolist=To-do List
+Calendar=Calendario

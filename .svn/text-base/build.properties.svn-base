@@ -1,0 +1,36 @@
+########
+dir.base       						=.
+dir.src										=${dir.base}/src
+dir.lib             			=${dir.base}/lib
+dir.build									=${dir.base}/dist/build
+dir.dist					 				=${dir.base}/dist
+dir.dist.jar							=${dir.dist}/jar
+
+javac.memoryMaximumSize=1024m
+
+######## common_pojo webapps
+dir.common_pojo									=${dir.base}
+dir.common_pojo.webapps.ap                			=${dir.common_pojo}/WebContent
+dir.common_pojo.webapps.ap.webinf         			=${dir.common_pojo.webapps.ap}/WEB-INF
+dir.common_pojo.webapps.ap.webinf.classes 			=${dir.common_pojo.webapps.ap.webinf}/classes
+dir.common_pojo.webapps.ap.webinf.lib     			=${dir.common_pojo.webapps.ap.webinf}/lib
+######## common_pojo build
+dir.build.common_pojo                =${dir.build}/common_pojo
+dir.build.classes.common_pojo			 	=${dir.build.common_pojo}/classes
+jar.filename.common_pojo				 			=common_pojo.jar
+######## common_pojo dist
+dir.dist.common_pojo					 				=${dir.dist}/common_pojo/
+dir.dist.jar.common_pojo				 			=${dir.dist.common_pojo}/jar
+
+## dist war
+dir.dist.war									=${dir.dist}/war
+dir.dist.war.common_pojo							=${dir.dist.war}/common_pojo
+dir.dist.war.common_pojo.webinf.classes		=${dir.dist.war.common_pojo}/WEB-INF/classes
+dir.dist.war.common_pojo.webinf.lib				=${dir.dist.war.common_pojo}/WEB-INF/lib
+war.fileName.common_pojo							=common_pojo.war
+
+
+token.hibernate.increment=<generator class="increment"
+token.hibernate.native=<generator class="native"
+token.db2.blob=varchar(16777216) for bit data
+value.db2.blob=blob(16777216)

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/TCGX/!svn/ver/195/SRC/WebContent/WEB-INF/applicationContext
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/TCGX/!svn/ver/73/SRC/WebContent/WEB-INF/applicationContext/applicationContext.xml
+END
+applicationContext-persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/TCGX/!svn/ver/55/SRC/WebContent/WEB-INF/applicationContext/applicationContext-persistence.xml
+END
+applicationContext-sessionFactory.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/TCGX/!svn/ver/195/SRC/WebContent/WEB-INF/applicationContext/applicationContext-sessionFactory.xml
+END
+applicationContext-serviceGetter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/TCGX/!svn/ver/103/SRC/WebContent/WEB-INF/applicationContext/applicationContext-serviceGetter.xml
+END

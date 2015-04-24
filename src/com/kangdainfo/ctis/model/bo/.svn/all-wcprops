@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/TCGX/!svn/ver/188/SRC/src/com/kangdainfo/ctis/model/bo
+END
+CenterMemberInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/139/SRC/src/com/kangdainfo/ctis/model/bo/CenterMemberInfo.java
+END
+CenterUsage.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/TCGX/!svn/ver/165/SRC/src/com/kangdainfo/ctis/model/bo/CenterUsage.java
+END
+CtMemberInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/TCGX/!svn/ver/169/SRC/src/com/kangdainfo/ctis/model/bo/CtMemberInfo.java
+END
+BaseDsaJobDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/ctis/model/bo/BaseDsaJobDef.java
+END
+BaseHealthDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/ctis/model/bo/BaseHealthDef.java
+END
+CenterDsaMemberRecord.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/TCGX/!svn/ver/139/SRC/src/com/kangdainfo/ctis/model/bo/CenterDsaMemberRecord.java
+END
+BaseLanguageInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/ctis/model/bo/BaseLanguageInfo.java
+END
+BaseChanCatDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/TCGX/!svn/ver/188/SRC/src/com/kangdainfo/ctis/model/bo/BaseChanCatDef.java
+END
+CtMasterInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/TCGX/!svn/ver/131/SRC/src/com/kangdainfo/ctis/model/bo/CtMasterInfo.java
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/TCGX/!svn/ver/106/SRC/WebContent/WEB-INF/applicationContext/modules
+END
+applicationContext-schedule.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/TCGX/!svn/ver/106/SRC/WebContent/WEB-INF/applicationContext/modules/applicationContext-schedule.xml
+END
+applicationContext-systems.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/TCGX/!svn/ver/54/SRC/WebContent/WEB-INF/applicationContext/modules/applicationContext-systems.xml
+END
